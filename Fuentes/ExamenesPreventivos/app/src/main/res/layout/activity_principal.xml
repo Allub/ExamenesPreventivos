@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +8,24 @@
     android:orientation="vertical"
     tools:context=".PrincipalActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Lore linda garcias por todo"
-        android:textSize="50dp"
-        android:layout_height="wrap_content"></TextView>
+    <include
+        layout="@layout/toolbar"
+        ></include>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/pacientes_lv"
+        android:layout_height="wrap_content">
+
+    </ListView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:background="@color/colorAccent"
+        android:layout_margin="16dp"
+        android:id="@+id/agregar_btn_fb"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        >
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 </LinearLayout>

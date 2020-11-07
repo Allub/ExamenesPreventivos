@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="letraTitulo">30sp</dimen>
+    <dimen name="marginTopBase">10dp</dimen>
+    <dimen name="layoutWidth">150dp</dimen>
+    <dimen name="layoutBtn">135dp</dimen>
+    <dimen name="layoutHeight">35dp</dimen>
+    <dimen name="layoutFecha">300dp</dimen>
+    <dimen name="buttonFecha">10dp</dimen>
+    <dimen name="marginTop5">5dp</dimen>
+    <dimen name="marginTop15">15dp</dimen>
+    <dimen name="layout0">0dp</dimen>
+    <dimen name="padding10">10dp</dimen>
+    <dimen name="layout80">80dp</dimen>
+    <dimen name="letraTextView">18sp</dimen>
+    <dimen name="letraList">16sp</dimen>
+</resources>

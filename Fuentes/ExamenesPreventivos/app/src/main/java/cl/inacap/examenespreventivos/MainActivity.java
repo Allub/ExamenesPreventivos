@@ -31,32 +31,37 @@ public class MainActivity extends AppCompatActivity {
         this.sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validaRut(nombre.getText().toString()) == true) {
-                    usuario = nombre.getText().toString();
-                }else{
-                    Toast.makeText(MainActivity.this, "Nombre de usuario invalido", Toast.LENGTH_SHORT).show();
-                }
-                clave = contraseña.getText().toString();
-                if(usuario.length()==10) {
-                    if (clave.equals(usuario.substring(4, 8))) {
-                        //intent
-                        startActivity(new Intent(MainActivity.this,PrincipalActivity.class));
+                try {
+                    if (validaRut(nombre.getText().toString()) == true) {
+                        usuario = nombre.getText().toString();
                     } else {
-                        Toast.makeText(MainActivity.this, "Contraseña Incorrecta" + usuario.substring(4, 8), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Nombre de usuario invalido", Toast.LENGTH_SHORT).show();
                     }
-                }
-                if(usuario.length()==9){
-                    if(clave.equals(usuario.substring(3,7))){
-                       //intent
-                    }else{
-                        Toast.makeText(MainActivity.this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
+                    clave = contraseña.getText().toString();
+                    if (usuario.length() == 10) {
+                        if (clave.equals(usuario.substring(4, 8))) {
+                            //intent
+                            startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
+                        } else {
+                            Toast.makeText(MainActivity.this, "Contraseña Incorrecta" + usuario.substring(4, 8), Toast.LENGTH_SHORT).show();
+                        }
                     }
+                    if (usuario.length() == 9) {
+                        if (clave.equals(usuario.substring(3, 7))) {
+                            //intent
+                        } else {
+                            Toast.makeText(MainActivity.this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }catch (Exception ex){
+
                 }
 
             }
         });
 
     }
+
     //validador de rut
     public static Boolean validaRut(String rut) {
         Pattern pattern = Pattern.compile("[0-9]{7,8}-[0-9kK]{1}");
