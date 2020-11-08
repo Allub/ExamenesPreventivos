@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PatternMatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,27 +31,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    if (nombre.getText().toString().isEmpty()){
+                        Toast.makeText(MainActivity.this, "Debe ingresar nombre de usuario", Toast.LENGTH_SHORT).show();
+                        nombre.setBackground(getDrawable(R.drawable.border));
+                    }
                     if (validaRut(nombre.getText().toString()) == true) {
                         usuario = nombre.getText().toString();
                     } else {
                         Toast.makeText(MainActivity.this, "Nombre de usuario invalido", Toast.LENGTH_SHORT).show();
                     }
                     clave = contraseña.getText().toString();
+                    if(clave.isEmpty()){
+                        Toast.makeText(MainActivity.this, "Debe ingresar contraseña", Toast.LENGTH_SHORT).show();
+                    }
                     if (usuario.length() == 10) {
                         if (clave.equals(usuario.substring(4, 8))) {
                             //intent
                             startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {
-                            Toast.makeText(MainActivity.this, "Contraseña Incorrecta" + usuario.substring(4, 8), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Contraseña Incorrecta" , Toast.LENGTH_SHORT).show();
                         }
                     }
                     if (usuario.length() == 9) {
                         if (clave.equals(usuario.substring(3, 7))) {
                             //intent
+                            startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                 }catch (Exception ex){
 
                 }

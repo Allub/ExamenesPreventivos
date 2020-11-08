@@ -19,6 +19,7 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import cl.inacap.examenespreventivos.dao.PacientesDAO;
@@ -63,7 +64,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
         this.fechaTxt = findViewById(R.id.fecha_pac_txt);
         this.areaTrabajo = findViewById(R.id.areaSp);
         String[] areasTrabajos = {"Atención a publico","otro"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice, areasTrabajos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, areasTrabajos);
         areaTrabajo.setAdapter(adapter);
         areaTrabajo.isShown();
         this.sinSw = findViewById(R.id.sintomas_sw);
@@ -90,20 +91,18 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                         public void onDateSet(DatePicker datePicker, int d, int m, int y) {
                             Calendar calendario = Calendar.getInstance();
                             calendario.set(d, m, y);
-
                             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                             String strDate = format.format(calendario.getTime());
+
                             fechaTxt.setText(strDate);
                         }
                     }
                             , anio, mes, dia);
+                    datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
                     datePickerDialog.show();
-
-
                 }
             }
         });
-
             this.registrarBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -121,7 +120,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                     if (apellStr.isEmpty()){
                         errores.add("Debe ingresar un apellido");
                     }
-                    //fecha
+
                     String tempStr = tempTxt.getText().toString().trim();
                     int temper = 0;
                     try {

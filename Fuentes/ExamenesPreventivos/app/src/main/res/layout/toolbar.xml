@@ -12,11 +12,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="80dp">
+        android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="match_parent"
-            android:src="@drawable/iconoxd"
-            android:layout_height="80dp"></ImageView>
+            android:layout_height="75dp"
+            android:src="@drawable/iconoxd"></ImageView>
 
 
     </LinearLayout>

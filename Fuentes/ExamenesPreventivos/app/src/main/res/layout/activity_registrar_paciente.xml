@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej : Loreto "></EditText>
+            android:hint="Ej: 19620502-1 "></EditText>
 
     </LinearLayout>
 
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej : 12345678-9"></EditText>
+            android:hint="Ej: Franco"></EditText>
 
     </LinearLayout>
 
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej : Avilés"></EditText>
+            android:hint="Ej: Torres"></EditText>
 
     </LinearLayout>
 
@@ -116,16 +116,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_width="match_parent"
-            android:text="Area de Trabajo: "
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
+            android:text="Area de Trabajo: "
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
+
         <Spinner
             android:id="@+id/areaSp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_width="@dimen/layoutWidth"
             android:layout_height="wrap_content"></Spinner>
 
@@ -231,7 +233,7 @@
         android:id="@+id/registrarBtn"
         android:layout_width="@dimen/layoutBtn"
         android:layout_marginLeft="150dp"
-        android:layout_marginTop="@dimen/marginTop15"
+        android:layout_marginTop="@dimen/marginTop20"
         android:layout_height="@dimen/layoutHeight"
         android:background="@color/colorPrimaryDark"
         android:text="Registrar"></Button>
