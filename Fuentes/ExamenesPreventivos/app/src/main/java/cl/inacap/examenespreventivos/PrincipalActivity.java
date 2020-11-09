@@ -50,9 +50,7 @@ public class PrincipalActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(PrincipalActivity.this,VerPacienteActivity.class);
-                //1. Cual fue la fila que clickearon?
                 Paciente prodActual = pacientes.get(i);
-                //2. Como le paso el producto seleccionado al otro activity?
                 intent.putExtra("pacientes",prodActual);
                 startActivity(intent);
             }

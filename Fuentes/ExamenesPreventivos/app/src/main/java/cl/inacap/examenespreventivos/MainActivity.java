@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (usuario.length() == 10) {
                         if (clave.equals(usuario.substring(4, 8))) {
-                            //intent
                             startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Contraseña Incorrecta" , Toast.LENGTH_SHORT).show();
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (usuario.length() == 9) {
                         if (clave.equals(usuario.substring(3, 7))) {
-                            //intent
                             startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //validador de rut
     public static Boolean validaRut(String rut) {
         Pattern pattern = Pattern.compile("[0-9]{7,8}-[0-9kK]{1}");
         Matcher matcher = pattern.matcher(rut);
@@ -79,6 +76,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
 }

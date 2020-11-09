@@ -11,14 +11,13 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
+
         android:orientation="horizontal"
         android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="@dimen/layout80"
             android:src="@drawable/iconoxd"></ImageView>
-
-
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

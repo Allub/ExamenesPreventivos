@@ -14,9 +14,6 @@ import cl.inacap.examenespreventivos.helpers.PacientesSQLiteHelper;
 public class PacientesDAOSQLite implements PacientesDAO {
 
     private PacientesSQLiteHelper pacHelper;
-    //cuando se crea esta instancia, se crea el helper
-    //este helper tiene el acceso a las bd
-    //asi puedo conectarme, obtener datos, ver datos, etc.
     public PacientesDAOSQLite(Context context){
         this.pacHelper = new PacientesSQLiteHelper(context, "DBPacientes"
                 ,null,1);
@@ -24,7 +21,6 @@ public class PacientesDAOSQLite implements PacientesDAO {
 
     @Override
     public List<Paciente> getAll() {
-        //con esto se tiene referencia a la lectura de bd
         SQLiteDatabase reader = this.pacHelper.getReadableDatabase();
         List<Paciente> pacientes = new ArrayList<>();
         try {
@@ -42,9 +38,17 @@ public class PacientesDAOSQLite implements PacientesDAO {
                         p.setApellido(c.getString(3));
                         p.setFecha(c.getString(4));
                         p.setAreaTrabajo(c.getString(5));
-                        p.setEsCovid(c.getString(6));
+                        if (c.getString(6).equals("true")){
+                            p.setEsCovid(true);
+                        }else{
+                            p.setEsCovid(false);
+                        }
                         p.setTemperatura(c.getFloat(7));
-                        p.setTos(c.getString(8));
+                        if (c.getString(8).equals("true")){
+                            p.setTos(true);
+                        }else{
+                            p.setTos(false);
+                        }
                         p.setArterial(c.getInt(9));
                         pacientes.add(p);
                     }while (c.moveToNext());
@@ -63,12 +67,11 @@ public class PacientesDAOSQLite implements PacientesDAO {
     @Override
     public Paciente save(Paciente p) {
         SQLiteDatabase writer = this.pacHelper.getWritableDatabase();
-        //aca se genera la query
         String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fechaExamen,areaTrabajo,sintomas" +
                 ",temperatura,tos,presionArterial)" +
                 " VALUES ('%s','%s','%s','%s','%s','%s',%.2f,'%s',%d)",p.getRut(),p.getNombre()
                 ,p.getApellido(),p.getFecha(),p.getAreaTrabajo(),p.getEsCovid(),p.getTemperatura(),p.getTos(),p.getArterial());
-        //para ejecutar
+
         writer.execSQL(sql);
         writer.close();
 

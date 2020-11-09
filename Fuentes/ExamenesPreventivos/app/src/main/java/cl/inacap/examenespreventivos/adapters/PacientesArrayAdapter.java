@@ -46,14 +46,13 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
         nombreTv.setText(actual.getNombre());
         apellidoTv.setText(actual.getApellido());
         fechaTv.setText(actual.getFecha());
-        if(actual.getEsCovid().equals("si")){
+        if(actual.getEsCovid().toString().equals("true")){
             actual.setIcono("https://www.industriall-union.org/sites/default/files/uploads/images/COVID-19/virus.jpg");
             Picasso.get().load(actual.getIcono())
                     .resize(300,300)
                     .centerCrop()
                     .into(icono);
         }
-
         return fila;
     }
 }

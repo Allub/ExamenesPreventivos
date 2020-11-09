@@ -15,15 +15,15 @@
 
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
-            android:text="Ingrese Rut: "
+            android:text="Ingrese Rut:"
             android:layout_weight="1"
             android:textSize="@dimen/letraTextView"
             android:textColor="@color/colorText"
@@ -33,13 +33,13 @@
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej: 19620502-1 "></EditText>
+            android:hint="Ej: 19620502-1"></EditText>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -61,8 +61,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -86,8 +86,8 @@
 
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -111,14 +111,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="140dp"
+            android:layout_width="@dimen/layout140"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Area de Trabajo: "
@@ -134,8 +134,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -159,8 +159,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -182,8 +182,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -206,8 +206,8 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/layout300"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
@@ -223,7 +223,7 @@
             android:layout_width="match_parent"
             android:inputType="numberSigned"
             android:id="@+id/presion_pac_txt"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_height="wrap_content"></EditText>
 
     </LinearLayout>
@@ -232,10 +232,11 @@
     <Button
         android:id="@+id/registrarBtn"
         android:layout_width="@dimen/layoutBtn"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="@dimen/layoutWidth"
         android:layout_marginTop="@dimen/marginTop20"
         android:layout_height="@dimen/layoutHeight"
         android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextInicio"
         android:text="Registrar"></Button>
 
 

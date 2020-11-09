@@ -16,16 +16,16 @@
         android:layout_height="wrap_content"></TextView>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/widthLetra"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/margin100"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="@dimen/marginTop20"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="@dimen/margin30"
             android:layout_weight="1"
             android:textSize="@dimen/letraTextView"
             android:textColor="@color/colorText"
@@ -33,24 +33,25 @@
             android:text="Nombre: "></TextView>
 
         <EditText
+            android:hint="12345678-9"
             android:id="@+id/nombre"
-            android:layout_width="10dp"
+            android:layout_width="@dimen/marginTopBase"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/margin30"
             android:layout_weight="1"></EditText>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_marginLeft="50dp"
+        android:layout_width="@dimen/widthLetra"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="20dp"
+            android:layout_width="@dimen/marginTop20"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="@dimen/margin30"
             android:textColor="@color/colorText"
             android:layout_weight="1"
             android:textSize="@dimen/letraTextView"
@@ -59,9 +60,9 @@
 
         <EditText
             android:id="@+id/contraseña"
-            android:layout_width="10dp"
+            android:layout_width="@dimen/marginTopBase"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/margin30"
             android:inputType="numberPassword"
             android:maxLength="4"
             android:layout_weight="1"></EditText>
@@ -72,7 +73,7 @@
         android:id="@+id/sesion"
         android:layout_marginTop="@dimen/marginTop20"
         android:layout_width="@dimen/layoutBtn"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="@dimen/layoutWidth"
         android:layout_height="@dimen/layoutHeight"
         android:textColor="@color/colorTextInicio"
         android:background="@color/colorPrimaryDark"

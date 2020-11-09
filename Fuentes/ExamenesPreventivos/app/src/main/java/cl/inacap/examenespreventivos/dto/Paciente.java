@@ -9,9 +9,9 @@ public class Paciente implements Serializable {
     private String apellido;
     private String fecha;
     private String areaTrabajo;
-    private String esCovid;
+    private Boolean esCovid;
     private Float temperatura;
-    private String tos;
+    private Boolean tos;
     private int arterial;
     private String icono;
 
@@ -32,19 +32,19 @@ public class Paciente implements Serializable {
         this.id = id;
     }
 
-    public String getEsCovid() {
+    public Boolean getEsCovid() {
         return esCovid;
     }
 
-    public void setEsCovid(String esCovid) {
+    public void setEsCovid(Boolean esCovid) {
         this.esCovid = esCovid;
     }
 
-    public String getTos() {
+    public Boolean getTos() {
         return tos;
     }
 
-    public void setTos(String tos) {
+    public void setTos(Boolean tos) {
         this.tos = tos;
     }
 

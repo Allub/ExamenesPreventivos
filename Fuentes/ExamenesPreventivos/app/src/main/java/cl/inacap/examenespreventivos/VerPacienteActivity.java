@@ -48,8 +48,16 @@ public class VerPacienteActivity extends AppCompatActivity {
             this.nombreYapellidoVp.setText(paciente.getNombre()+" "+paciente.getApellido());
             this.fechaVp.setText(paciente.getFecha());
             this.areaVp.setText(paciente.getAreaTrabajo());
-            this.covidVp.setText(paciente.getEsCovid());
-            this.tosVp.setText(paciente.getTos());
+            if (paciente.getEsCovid()){
+                this.covidVp.setText("si");
+            }else{
+                this.covidVp.setText("no");
+            }
+            if (paciente.getTos()){
+                this.tosVp.setText("si");
+            }else{
+                this.tosVp.setText("no");
+            }
             this.tempVp.setText(paciente.getTemperatura().toString());
             this.presionVp.setText(""+paciente.getArterial());
 

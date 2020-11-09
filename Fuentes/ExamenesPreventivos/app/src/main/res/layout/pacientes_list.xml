@@ -25,7 +25,7 @@
             android:layout_height="@dimen/layout0"
             android:layout_weight="50"
             android:gravity="center|left"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/letraList"></TextView>
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="@dimen/layout0"
             android:layout_weight="50"
             android:gravity="center|left"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/letraList"></TextView>
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_height="@dimen/layout0"
             android:layout_weight="50"
             android:gravity="center|left"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/letraList"></TextView>
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="@dimen/layout0"
             android:layout_weight="50"
             android:gravity="center|left"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorText"
             android:textSize="@dimen/letraList"></TextView>
     </LinearLayout>
 

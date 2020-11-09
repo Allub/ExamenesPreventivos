@@ -6,9 +6,8 @@ import java.util.List;
 import cl.inacap.examenespreventivos.dto.Paciente;
 
 public class PacientesDAOLista implements PacientesDAO {
-
-    private List<Paciente> pacientes = new ArrayList<>();
     private static PacientesDAOLista instancia;
+    private List<Paciente> pacientes = new ArrayList<>();
 
     public static PacientesDAOLista getInstance(){
         if(instancia == null){
@@ -16,7 +15,6 @@ public class PacientesDAOLista implements PacientesDAO {
         }
         return instancia;
     }
-
     @Override
     public List<Paciente> getAll() {
         return pacientes;

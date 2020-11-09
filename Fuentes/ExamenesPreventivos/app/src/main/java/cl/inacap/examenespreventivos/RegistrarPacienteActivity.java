@@ -103,14 +103,14 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                 }
             }
         });
+
             this.registrarBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //1.Crear producto
                     Paciente p = new Paciente();
                     List<String> errores = new ArrayList<>();
                     String rutStr = rutTxt.getText().toString().trim();
-                    if (main.validaRut(rutStr)==false)
+                    if (validarRut(rutStr)==false)
                         errores.add("Debe Ingresar un Rut valido");
                     String nomStr = nombretxt.getText().toString().trim();
                     if (nomStr.isEmpty()){
@@ -131,6 +131,9 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                     }catch (Exception ex){
                         errores.add("Debe Ingresar un valor mayor a 20");
                     }
+                    if(fechaTxt.getText().toString().isEmpty()){
+                        errores.add("Debe seleccionar una fecha");
+                    }
                     if (errores.isEmpty()){
                         p.setRut(rutTxt.getText().toString());
                         p.setNombre(nombretxt.getText().toString());
@@ -138,25 +141,22 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                         p.setFecha(fechaTxt.getText().toString());
                         p.setAreaTrabajo(areaTrabajo.getSelectedItem().toString());
                         if(sinSw.isChecked()){
-                            p.setEsCovid("si");
+                            p.setEsCovid(true);
                         }else{
-                            p.setEsCovid("no");
+                            p.setEsCovid(false);
                         }
-
-
                         if (tosSw.isChecked()){
-                            p.setTos("si");
+                            p.setTos(true);
                         }else{
-                            p.setTos("no");
+                            p.setTos(false);
                         }
 
                         p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
                         p.setArterial(Integer.parseInt(presionTxt.getText().toString()));
 
 
-                        //2. Llamar al DAO y agregarlo
                         pacDAO.save(p);
-                        //3. Redirigir al Principal activity
+
                         startActivity(new Intent(RegistrarPacienteActivity.this,PrincipalActivity.class));
                     }else{
                         mostrarErrores(errores);
@@ -176,7 +176,30 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                             .show();
                 }
             });
-
-
     }
+    public static boolean validarRut(String rut) {
+
+        boolean validacion = false;
+        try {
+            rut =  rut.toUpperCase();
+            rut = rut.replace(".", "");
+            rut = rut.replace("-", "");
+            int rutAux = Integer.parseInt(rut.substring(0, rut.length() - 1));
+
+            char dv = rut.charAt(rut.length() - 1);
+
+            int m = 0, s = 1;
+            for (; rutAux != 0; rutAux /= 10) {
+                s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+            }
+            if (dv == (char) (s != 0 ? s + 47 : 75)) {
+                validacion = true;
+            }
+
+        } catch (java.lang.NumberFormatException e) {
+        } catch (Exception e) {
+        }
+        return validacion;
+    }
+
 }
