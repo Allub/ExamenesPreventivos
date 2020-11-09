@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Debe ingresar nombre de usuario", Toast.LENGTH_SHORT).show();
                         nombre.setBackground(getDrawable(R.drawable.border));
                     }
-                    if (validaRut(nombre.getText().toString()) == true) {
+                    else if (validaRut(nombre.getText().toString()) == true) {
                         usuario = nombre.getText().toString();
                     } else {
                         Toast.makeText(MainActivity.this, "Nombre de usuario invalido", Toast.LENGTH_SHORT).show();
@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
                     if(clave.isEmpty()){
                         Toast.makeText(MainActivity.this, "Debe ingresar contraseña", Toast.LENGTH_SHORT).show();
                     }
-                    if (usuario.length() == 10) {
+                    else if (usuario.length() == 10) {
                         if (clave.equals(usuario.substring(4, 8))) {
                             startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Contraseña Incorrecta" , Toast.LENGTH_SHORT).show();
                         }
                     }
-                    if (usuario.length() == 9) {
+                    else if (usuario.length() == 9) {
                         if (clave.equals(usuario.substring(3, 7))) {
                             startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
                         } else {

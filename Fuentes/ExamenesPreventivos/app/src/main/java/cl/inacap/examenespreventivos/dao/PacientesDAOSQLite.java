@@ -69,7 +69,7 @@ public class PacientesDAOSQLite implements PacientesDAO {
         SQLiteDatabase writer = this.pacHelper.getWritableDatabase();
         String sql = String.format("INSERT INTO pacientes(rut,nombre,apellido,fechaExamen,areaTrabajo,sintomas" +
                 ",temperatura,tos,presionArterial)" +
-                " VALUES ('%s','%s','%s','%s','%s','%s',%.2f,'%s',%d)",p.getRut(),p.getNombre()
+                " VALUES ('%s','%s','%s','%s','%s','%s',%.1f,'%s',%d)",p.getRut(),p.getNombre()
                 ,p.getApellido(),p.getFecha(),p.getAreaTrabajo(),p.getEsCovid(),p.getTemperatura(),p.getTos(),p.getArterial());
 
         writer.execSQL(sql);

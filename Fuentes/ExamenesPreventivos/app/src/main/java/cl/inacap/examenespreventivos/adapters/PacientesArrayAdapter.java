@@ -42,12 +42,12 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
 
         Paciente actual = pacientes.get(position);
-        rutTv.setText(actual.getRut());
-        nombreTv.setText(actual.getNombre());
-        apellidoTv.setText(actual.getApellido());
-        fechaTv.setText(actual.getFecha());
+        rutTv.setText("Rut: "+actual.getRut());
+        nombreTv.setText("Nombre: "+actual.getNombre());
+        apellidoTv.setText("Apellido: "+actual.getApellido());
+        fechaTv.setText("Fecha: "+actual.getFecha());
         if(actual.getEsCovid().toString().equals("true")){
-            actual.setIcono("https://www.industriall-union.org/sites/default/files/uploads/images/COVID-19/virus.jpg");
+            actual.setIcono("https://genotipia.com/wp-content/uploads/2020/04/virus-1024x975.jpeg");
             Picasso.get().load(actual.getIcono())
                     .resize(300,300)
                     .centerCrop()

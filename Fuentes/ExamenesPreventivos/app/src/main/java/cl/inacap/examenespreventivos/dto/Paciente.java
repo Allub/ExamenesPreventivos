@@ -15,6 +15,15 @@ public class Paciente implements Serializable {
     private int arterial;
     private String icono;
 
+    @Override
+    public String toString() {
+        return "Paciente{" +
+                "rut='" + rut + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", fecha='" + fecha + '\'' +
+                '}';
+    }
 
     public String getIcono() {
         return icono;

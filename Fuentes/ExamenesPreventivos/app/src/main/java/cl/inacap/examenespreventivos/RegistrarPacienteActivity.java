@@ -122,18 +122,19 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
                     }
 
                     String tempStr = tempTxt.getText().toString().trim();
-                    int temper = 0;
+                    float temper = 0;
                     try {
-                        temper = Integer.parseInt(tempStr);
+                        temper = Float.parseFloat(tempStr);
                         if (temper < 20){
                             throw new NumberFormatException();
                         }
                     }catch (Exception ex){
-                        errores.add("Debe Ingresar un valor mayor a 20");
+                        errores.add("Debe Ingresar una temperatura mayor a 20");
                     }
                     if(fechaTxt.getText().toString().isEmpty()){
                         errores.add("Debe seleccionar una fecha");
                     }
+
                     if (errores.isEmpty()){
                         p.setRut(rutTxt.getText().toString());
                         p.setNombre(nombretxt.getText().toString());
