@@ -42,24 +42,24 @@ public class VerPacienteActivity extends AppCompatActivity {
         this.tosVp = findViewById(R.id.tos_ver_pac);
         this.tempVp = findViewById(R.id.temperatura_ver_pac);
         this.presionVp = findViewById(R.id.presion_ver_pac);
-        if (getIntent() != null){
+        if (getIntent() != null) {
             Paciente paciente = (Paciente) getIntent().getSerializableExtra("pacientes");
             this.rutVp.setText(paciente.getRut());
-            this.nombreYapellidoVp.setText(paciente.getNombre()+" "+paciente.getApellido());
+            this.nombreYapellidoVp.setText(paciente.getNombre() + " " + paciente.getApellido());
             this.fechaVp.setText(paciente.getFecha());
             this.areaVp.setText(paciente.getAreaTrabajo());
-            if (paciente.getEsCovid()){
+            if (paciente.getEsCovid()) {
                 this.covidVp.setText("si");
-            }else{
+            } else {
                 this.covidVp.setText("no");
             }
-            if (paciente.getTos()){
+            if (paciente.getTos()) {
                 this.tosVp.setText("si");
-            }else{
+            } else {
                 this.tosVp.setText("no");
             }
             this.tempVp.setText(paciente.getTemperatura().toString());
-            this.presionVp.setText(""+paciente.getArterial());
+            this.presionVp.setText("" + paciente.getArterial());
 
         }
     }

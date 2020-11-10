@@ -6,19 +6,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
-        android:text="Inicio de sesión"
-        android:textSize="@dimen/letraTitulo"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/letraTitulo"
-        android:textColor="@color/colorText"
         android:gravity="center"
-        android:layout_height="wrap_content"></TextView>
+        android:text="Inicio de sesión"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/letraTitulo"></TextView>
 
     <LinearLayout
         android:layout_width="@dimen/widthLetra"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/margin100"
         android:orientation="horizontal">
 
@@ -27,58 +28,57 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin30"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
-            android:textColor="@color/colorText"
             android:gravity="center"
-            android:text="Nombre: "></TextView>
+            android:text="Nombre: "
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/letraTextView"></TextView>
 
         <EditText
-            android:hint="12345678-9"
             android:id="@+id/nombre"
             android:layout_width="@dimen/marginTopBase"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margin30"
-            android:layout_weight="1"></EditText>
+            android:layout_weight="1"
+            android:hint="12345678-9"></EditText>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="@dimen/widthLetra"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="@dimen/marginTop20"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin30"
-            android:textColor="@color/colorText"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
             android:gravity="center"
-            android:text="Contraseña: "></TextView>
+            android:text="Contraseña: "
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/letraTextView"></TextView>
 
         <EditText
             android:id="@+id/contraseña"
             android:layout_width="@dimen/marginTopBase"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margin30"
+            android:layout_weight="1"
             android:inputType="numberPassword"
-            android:maxLength="4"
-            android:layout_weight="1"></EditText>
+            android:maxLength="4"></EditText>
 
     </LinearLayout>
 
     <Button
         android:id="@+id/sesion"
-        android:layout_marginTop="@dimen/marginTop20"
         android:layout_width="@dimen/layoutBtn"
-        android:layout_marginLeft="@dimen/layoutWidth"
         android:layout_height="@dimen/layoutHeight"
-        android:textColor="@color/colorTextInicio"
+        android:layout_marginLeft="@dimen/layoutWidth"
+        android:layout_marginTop="@dimen/marginTop20"
         android:background="@color/colorPrimaryDark"
-        android:text="Iniciar sesión"></Button>
-
+        android:text="Iniciar sesión"
+        android:textColor="@color/colorTextInicio"></Button>
 
 
 </LinearLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,87 +7,86 @@
     android:orientation="vertical"
     tools:context=".RegistrarPacienteActivity">
 
-    <include
-        layout="@layout/toolbar"
-        ></include>
-
+    <include layout="@layout/toolbar"></include>
 
 
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
-            android:text="Ingrese Rut:"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
+            android:text="Ingrese Rut:"
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
+
         <EditText
             android:id="@+id/rut_pac_txt"
             android:layout_width="match_parent"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej: 19620502-1"></EditText>
+            android:layout_weight="1"
+            android:hint="Ej: 12345678-9"></EditText>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
-            android:text="Ingrese Nombre: "
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
+            android:text="Ingrese Nombre: "
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
+
         <EditText
             android:id="@+id/nombre_pac_txt"
             android:layout_width="match_parent"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="Ej: Franco"></EditText>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
-            android:text="Ingrese Apellido: "
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
+            android:text="Ingrese Apellido: "
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
+
         <EditText
             android:id="@+id/apellido_pac_txt"
             android:layout_width="match_parent"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="Ej: Torres"></EditText>
+            android:layout_weight="1"
+            android:hint="Ej: Avilés"></EditText>
 
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
@@ -100,11 +98,11 @@
             android:text="Fecha"></Button>
 
         <TextView
-            android:textSize="@dimen/letraTextView"
             android:id="@+id/fecha_pac_txt"
             android:layout_width="@dimen/buttonFecha"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:textSize="@dimen/letraTextView">
 
         </TextView>
 
@@ -112,8 +110,8 @@
 
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
@@ -127,104 +125,109 @@
 
         <Spinner
             android:id="@+id/areaSp"
-            android:layout_weight="1"
             android:layout_width="@dimen/layoutWidth"
-            android:layout_height="wrap_content"></Spinner>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></Spinner>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="¿Presenta síntomas de covid?"
-            android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
+
         <Switch
-            android:layout_width="match_parent"
-            android:layout_weight="2"
             android:id="@+id/sintomas_sw"
-            android:textOn="si"
-            android:textOff="no"
-            android:showText="true"
-            android:layout_height="wrap_content"></Switch>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginTop15"
-        android:orientation="horizontal">
-    <TextView
-        android:layout_width="match_parent"
-        android:text="Temperatura: "
-        android:layout_weight="1"
-        android:textSize="@dimen/letraTextView"
-        android:textColor="@color/colorText"
-        android:layout_height="wrap_content"></TextView>
-
-        <EditText
             android:layout_width="match_parent"
-            android:inputType="numberDecimal"
-            android:id="@+id/tempe_pac_txt"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"></EditText>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
-        android:layout_marginTop="@dimen/marginTop15"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:text="¿Presenta tos?"
-            android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
-            android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
-        <Switch
-            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:id="@+id/tosSw"
-            android:textOn="si"
-            android:textOff="no"
             android:showText="true"
-            android:layout_height="wrap_content"></Switch>
+            android:textOff="no"
+            android:textOn="si"></Switch>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="@dimen/layout300"
-        android:layout_marginLeft="@dimen/margin50"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
         android:layout_marginTop="@dimen/marginTop15"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="match_parent"
-            android:text="Presion arterial: "
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="@dimen/letraTextView"
+            android:text="Temperatura: "
             android:textColor="@color/colorText"
-            android:layout_height="wrap_content"></TextView>
+            android:textSize="@dimen/letraTextView"></TextView>
 
         <EditText
+            android:id="@+id/tempe_pac_txt"
             android:layout_width="match_parent"
-            android:inputType="numberSigned"
-            android:id="@+id/presion_pac_txt"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"></EditText>
+            android:inputType="numberDecimal"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/layout300"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
+        android:layout_marginTop="@dimen/marginTop15"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="¿Presenta tos?"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/letraTextView"></TextView>
+
+        <Switch
+            android:id="@+id/tosSw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:showText="true"
+            android:textOff="no"
+            android:textOn="si"></Switch>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/layout300"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin50"
+        android:layout_marginTop="@dimen/marginTop15"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Presion arterial: "
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/letraTextView"></TextView>
+
+        <EditText
+            android:id="@+id/presion_pac_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberSigned"></EditText>
 
     </LinearLayout>
 
@@ -232,12 +235,12 @@
     <Button
         android:id="@+id/registrarBtn"
         android:layout_width="@dimen/layoutBtn"
+        android:layout_height="@dimen/layoutHeight"
         android:layout_marginLeft="@dimen/layoutWidth"
         android:layout_marginTop="@dimen/marginTop20"
-        android:layout_height="@dimen/layoutHeight"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorTextInicio"
-        android:text="Registrar"></Button>
+        android:text="Registrar"
+        android:textColor="@color/colorTextInicio"></Button>
 
 
 </LinearLayout>

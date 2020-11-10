@@ -22,6 +22,7 @@ import cl.inacap.examenespreventivos.dto.Paciente;
 public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
     private Activity activity;
     private List<Paciente> pacientes;
+
     public PacientesArrayAdapter(@NonNull Activity context, int resource, @NonNull List<Paciente> objects) {
         super(context, resource, objects);
         this.activity = context;
@@ -33,7 +34,7 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = this.activity.getLayoutInflater();
-        View fila = inflater.inflate(R.layout.pacientes_list,null,true);
+        View fila = inflater.inflate(R.layout.pacientes_list, null, true);
         ImageView icono = fila.findViewById(R.id.iconoImg);
         TextView rutTv = fila.findViewById(R.id.rutTxt);
         TextView nombreTv = fila.findViewById(R.id.nombreTxt);
@@ -42,14 +43,14 @@ public class PacientesArrayAdapter extends ArrayAdapter<Paciente> {
 
 
         Paciente actual = pacientes.get(position);
-        rutTv.setText("Rut: "+actual.getRut());
-        nombreTv.setText("Nombre: "+actual.getNombre());
-        apellidoTv.setText("Apellido: "+actual.getApellido());
-        fechaTv.setText("Fecha: "+actual.getFecha());
-        if(actual.getEsCovid().toString().equals("true")){
+        rutTv.setText("Rut: " + actual.getRut());
+        nombreTv.setText("Nombre: " + actual.getNombre());
+        apellidoTv.setText("Apellido: " + actual.getApellido());
+        fechaTv.setText("Fecha: " + actual.getFecha());
+        if (actual.getEsCovid().toString().equals("true")) {
             actual.setIcono("https://genotipia.com/wp-content/uploads/2020/04/virus-1024x975.jpeg");
             Picasso.get().load(actual.getIcono())
-                    .resize(300,300)
+                    .resize(300, 300)
                     .centerCrop()
                     .into(icono);
         }

@@ -63,7 +63,7 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
         this.apellidoTxt = findViewById(R.id.apellido_pac_txt);
         this.fechaTxt = findViewById(R.id.fecha_pac_txt);
         this.areaTrabajo = findViewById(R.id.areaSp);
-        String[] areasTrabajos = {"Atención a publico","otro"};
+        String[] areasTrabajos = {"Atención a publico", "otro"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, areasTrabajos);
         areaTrabajo.setAdapter(adapter);
         areaTrabajo.isShown();
@@ -104,85 +104,97 @@ public class RegistrarPacienteActivity extends AppCompatActivity {
             }
         });
 
-            this.registrarBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Paciente p = new Paciente();
-                    List<String> errores = new ArrayList<>();
-                    String rutStr = rutTxt.getText().toString().trim();
-                    if (validarRut(rutStr)==false)
-                        errores.add("Debe Ingresar un Rut valido");
-                    String nomStr = nombretxt.getText().toString().trim();
-                    if (nomStr.isEmpty()){
-                        errores.add("Debe ingresar un nombre");
-                    }
-                    String apellStr = apellidoTxt.getText().toString().trim();
-                    if (apellStr.isEmpty()){
-                        errores.add("Debe ingresar un apellido");
-                    }
-
-                    String tempStr = tempTxt.getText().toString().trim();
-                    float temper = 0;
-                    try {
-                        temper = Float.parseFloat(tempStr);
-                        if (temper < 20){
-                            throw new NumberFormatException();
-                        }
-                    }catch (Exception ex){
-                        errores.add("Debe Ingresar una temperatura mayor a 20");
-                    }
-                    if(fechaTxt.getText().toString().isEmpty()){
-                        errores.add("Debe seleccionar una fecha");
-                    }
-
-                    if (errores.isEmpty()){
-                        p.setRut(rutTxt.getText().toString());
-                        p.setNombre(nombretxt.getText().toString());
-                        p.setApellido(apellidoTxt.getText().toString());
-                        p.setFecha(fechaTxt.getText().toString());
-                        p.setAreaTrabajo(areaTrabajo.getSelectedItem().toString());
-                        if(sinSw.isChecked()){
-                            p.setEsCovid(true);
-                        }else{
-                            p.setEsCovid(false);
-                        }
-                        if (tosSw.isChecked()){
-                            p.setTos(true);
-                        }else{
-                            p.setTos(false);
-                        }
-
-                        p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
-                        p.setArterial(Integer.parseInt(presionTxt.getText().toString()));
-
-
-                        pacDAO.save(p);
-
-                        startActivity(new Intent(RegistrarPacienteActivity.this,PrincipalActivity.class));
-                    }else{
-                        mostrarErrores(errores);
-                    }
-
+        this.registrarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Paciente p = new Paciente();
+                List<String> errores = new ArrayList<>();
+                String rutStr = rutTxt.getText().toString().trim();
+                if (validarRut(rutStr) == false)
+                    errores.add("Debe Ingresar un Rut valido");
+                String nomStr = nombretxt.getText().toString().trim();
+                if (nomStr.isEmpty()) {
+                    errores.add("Debe ingresar un nombre");
                 }
-                private void mostrarErrores(List<String> errores) {
-                    String mensaje = "";
-                    for (String e : errores) {
-                        mensaje += "" + e + "\n";
-                    }
-                    AlertDialog.Builder aleBuilder = new AlertDialog.Builder(RegistrarPacienteActivity.this);
-                    aleBuilder.setTitle("Error de validación")
-                            .setMessage(mensaje)
-                            .setPositiveButton("Aceptar", null)
-                            .create()
-                            .show();
+                String apellStr = apellidoTxt.getText().toString().trim();
+                if (apellStr.isEmpty()) {
+                    errores.add("Debe ingresar un apellido");
                 }
-            });
+
+                String tempStr = tempTxt.getText().toString().trim();
+                float temper = 0;
+                try {
+                    temper = Float.parseFloat(tempStr);
+                    if (temper < 20) {
+                        throw new NumberFormatException();
+                    }
+                } catch (Exception ex) {
+                    errores.add("Debe Ingresar una temperatura mayor a 20");
+                }
+                if (fechaTxt.getText().toString().isEmpty()) {
+                    errores.add("Debe seleccionar una fecha");
+                }
+                String presStr = presionTxt.getText().toString().trim();
+                int presion = 0;
+                try {
+                    presion = Integer.parseInt(presStr);
+                    if (presion < 0) {
+                        throw new NumberFormatException();
+                    }
+                } catch (Exception ex) {
+                    errores.add("Debe Ingresar la presión arterial");
+                }
+
+                if (errores.isEmpty()) {
+                    p.setRut(rutTxt.getText().toString());
+                    p.setNombre(nombretxt.getText().toString());
+                    p.setApellido(apellidoTxt.getText().toString());
+                    p.setFecha(fechaTxt.getText().toString());
+                    p.setAreaTrabajo(areaTrabajo.getSelectedItem().toString());
+                    if (sinSw.isChecked()) {
+                        p.setEsCovid(true);
+                    } else {
+                        p.setEsCovid(false);
+                    }
+                    if (tosSw.isChecked()) {
+                        p.setTos(true);
+                    } else {
+                        p.setTos(false);
+                    }
+
+                    p.setTemperatura(Float.parseFloat(tempTxt.getText().toString()));
+                    p.setArterial(Integer.parseInt(presionTxt.getText().toString()));
+
+
+                    pacDAO.save(p);
+
+                    startActivity(new Intent(RegistrarPacienteActivity.this, PrincipalActivity.class));
+                } else {
+                    mostrarErrores(errores);
+                }
+
+            }
+
+            private void mostrarErrores(List<String> errores) {
+                String mensaje = "";
+                for (String e : errores) {
+                    mensaje += "" + e + "\n";
+                }
+                AlertDialog.Builder aleBuilder = new AlertDialog.Builder(RegistrarPacienteActivity.this);
+                aleBuilder.setTitle("Error de validación")
+                        .setMessage(mensaje)
+                        .setPositiveButton("Aceptar", null)
+                        .create()
+                        .show();
+            }
+        });
     }
+
     public static boolean validarRut(String rut) {
 
         boolean validacion = false;
         try {
-            rut =  rut.toUpperCase();
+            rut = rut.toUpperCase();
             rut = rut.replace(".", "");
             rut = rut.replace("-", "");
             int rutAux = Integer.parseInt(rut.substring(0, rut.length() - 1));

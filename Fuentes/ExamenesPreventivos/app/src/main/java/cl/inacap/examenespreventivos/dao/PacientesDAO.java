@@ -6,5 +6,6 @@ import cl.inacap.examenespreventivos.dto.Paciente;
 
 public interface PacientesDAO {
     List<Paciente> getAll();
+
     Paciente save(Paciente p);
 }

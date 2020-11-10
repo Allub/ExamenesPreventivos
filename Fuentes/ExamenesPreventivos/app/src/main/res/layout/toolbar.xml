@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:minHeight="?attr/actionBarSize"
-    android:background="@color/colorPrimaryDark"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/Theme.AppCompat.Light"
     android:id="@+id/toolbar"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/Theme.AppCompat.Light">
+
     <LinearLayout
         android:layout_width="match_parent"
 
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/layout80"
+            android:layout_marginRight="70dp"
             android:src="@drawable/iconoxd"></ImageView>
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

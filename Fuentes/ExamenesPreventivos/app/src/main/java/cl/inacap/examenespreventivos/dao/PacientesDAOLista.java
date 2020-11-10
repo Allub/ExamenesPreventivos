@@ -9,12 +9,13 @@ public class PacientesDAOLista implements PacientesDAO {
     private static PacientesDAOLista instancia;
     private List<Paciente> pacientes = new ArrayList<>();
 
-    public static PacientesDAOLista getInstance(){
-        if(instancia == null){
+    public static PacientesDAOLista getInstance() {
+        if (instancia == null) {
             instancia = new PacientesDAOLista();
         }
         return instancia;
     }
+
     @Override
     public List<Paciente> getAll() {
         return pacientes;
