@@ -38,8 +38,7 @@
             android:layout_width="@dimen/marginTopBase"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/margin30"
-            android:layout_weight="1"
-            android:hint="12345678-9"></EditText>
+            android:layout_weight="1"></EditText>
 
     </LinearLayout>
 
